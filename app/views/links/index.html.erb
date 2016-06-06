@@ -17,8 +17,12 @@
   <div class="user-links">
     <% @links.each do |link| %>
     <ul>
-      <li>Title: <%= link.title %></li>
-      <li>Link: <%= link.url %></li>
+      <div id= <%= "#{link.id}" %> class="link-content">
+        <li>Title: <%= link.title %></li>
+        <li>Link: <%= link.url %></li>
+        <div class="unread-link"><button class="btn btn-primary">Mark as Read</button></div>
+        <div class="read-link"><button class="btn btn-default">Mark as Unread</button></div>
+      </div>
     </ul>
     <% end %>
   </div>
