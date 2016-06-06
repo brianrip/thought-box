@@ -12,6 +12,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'responders'
 gem 'selenium-webdriver'
+gem 'bcrypt', '~> 3.1.7'
 
 group :test do
   gem 'webmock'
