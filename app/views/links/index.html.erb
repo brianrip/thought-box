@@ -14,12 +14,18 @@
     </div>
   </div>
 
+  <div class="link-finder">
+    <input type="text" name="find-link" id="find-link" placeholder="find link">
+  </div>
+
   <div class="user-links">
     <% @links.each do |link| %>
     <ul>
       <div class="link-content col-md-6" id= <%= "#{link.id}" %> >
-        <li>Title: <%= link.title %></li>
-        <li>Link: <%= link.url %></li>
+        <div class="link-text">
+          <li>Title: <%= link.title %></li>
+          <li>Link: <%= link.url %></li>
+        </div>
         <li>
           <%= link_to "Edit Link", edit_link_path(link.id) %>
         </li>
