@@ -13,6 +13,7 @@ gem 'faraday'
 gem 'responders'
 gem 'selenium-webdriver'
 gem 'bcrypt', '~> 3.1.7'
+gem "validate_url"
 
 group :test do
   gem 'webmock'

@@ -1,4 +1,16 @@
 <div class="container">
-
   <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-danger" %>
+
+  <div class="link-form">
+    <div class="text-center">
+      <h1>Submit a link here</h1>
+      <%= form_for(@new_link) do |f| %>
+        <h4><%= f.label :title %></h4>
+        <h4><%= f.text_field :title %></h4>
+        <h4><%= f.label :url %></h4>
+        <h4><%= f.text_field :url %></h4>
+        <%= f.submit "Submit link", class: "btn btn-primary btn-font-size" %>
+      <% end %>
+    </div>
+  </div>
 </div>
