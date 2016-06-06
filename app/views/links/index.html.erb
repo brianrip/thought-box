@@ -13,4 +13,13 @@
       <% end %>
     </div>
   </div>
+  
+  <div class="user-links">
+    <% @links.each do |link| %>
+    <ul>
+      <li>Title: <%= link.title %></li>
+      <li>Link: <%= link.url %></li>
+    </ul>
+    <% end %>
+  </div>
 </div>
