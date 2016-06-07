@@ -11,29 +11,29 @@
         <h4><%= f.text_field :url %></h4>
         <%= f.submit "Submit link", class: "btn btn-primary btn-font-size" %>
       <% end %>
+      <br><br>
     </div>
   </div>
 
-  <div class="link-finder">
+  <div class="link-finder text-center">
     <input type="text" name="find-link" id="find-link" placeholder="find link">
+    <button class="view-read btn btn-default">View Read Links</button>
+    <button class="view-unread btn btn-default">View Unread Links</button>
   </div>
 
   <div class="user-links">
     <% @links.each do |link| %>
     <ul>
-      <div class="link-content col-md-6" id= <%= "#{link.id}" %> >
-        <div class="link-text">
-          <li>Title: <%= link.title %></li>
-          <li>Link: <%= link.url %></li>
-        </div>
-        <li>
-          <%= link_to "Edit Link", edit_link_path(link.id) %>
-        </li>
-          <div class="unread-link"><button class="btn btn-primary">Mark as Read</button></div>
-          <div class="read-link"><button class="btn btn-default">Mark as Unread</button></div>
-      </div>
+      <div class="link-content col-md-6 text-center" id= <%= "#{link.id}" %> data-id= <%= "#{link.read}" %>>
+          <div class="link-text">
+            <h4>Title: <%= link.title %></h4>
+            <h5>Link: <%= link.url %></h5>
+          </div>
+            <%= link_to "Edit Link", edit_link_path(link.id) %>
+            <div class="unread-link"><button class="btn btn-primary">Mark as Read</button></div>
+            <div class="read-link"><button class="btn btn-default">Mark as Unread</button></div>
+          </div>
     </ul>
-    <hr>
     <% end %>
   </div>
 </div>
